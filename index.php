@@ -1,3 +1,34 @@
+<?php
+session_start();
+
+$host = "localhost";
+$user = "root";
+$pass = "root";
+$db = "sistema_simples";
+
+$conn = new mysqli($host, $user, $pass, $db);
+
+if ($conn->connect_error){
+        die("Erro na conexão!");
+}else{
+    // echo "<P> Banco: OK! </p>"
+    echo "<script> console.log('Banco: OK!') </script>";
+};
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+    $usuario = $_POST["usuario"];
+    $senha = $_POST["senha"];
+};
+
+?>
+
+
+
+
+
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
